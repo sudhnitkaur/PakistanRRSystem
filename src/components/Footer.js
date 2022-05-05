@@ -6,7 +6,7 @@ const Footer = () => {
      
       
       <div>
-      <h6> &copy; Copyright Made By: @Sudhnit Kaur</h6>
+      <h6> &copy; Copyright Made By: Sudhnit Kaur</h6>
       </div>
     </footer>
   )

@@ -1,5 +1,5 @@
 import axios from'axios'
-const GET_CHECKIN_URL ='http://localhost:8086/checkIn/get/checkin';
+const GET_CHECKIN_URL ='';
 
 class CheckinService{
     getCheckin(pnrNo){

@@ -6,18 +6,20 @@ const Header = () => {
     <header className='header'>
       <div>
         <Link className='links' to='/'>
-          Home
+          HOME
         </Link>
       </div>
 
       <nav className='navbar'>
         <ul>
           <Link className='links' to='/login'>
-            Admin
+            ADMIN
           </Link>
 
+          
+
           <Link className='links' to='/search'>
-            Search
+            USER
           </Link>
 
           <Link className='links' to='/checkin'>

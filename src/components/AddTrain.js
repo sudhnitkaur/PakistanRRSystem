@@ -11,16 +11,16 @@ const AddTrain = () => {
     const [deptTime, setdeptTime] = useState('')
     const [duration, setduration] = useState('')
     const [noOfSeats, setnoOfSeats] = useState('')
-    const [economyClass, setfirstClass] = useState('')
-    const [premiumEconomy, setsecondClass] = useState('')
-    const [businessClass, setsleeperClass] = useState('')
+    const [sleeperClass, setsleeperClass] = useState('')
+    const [SecondClass, setSecondClass] = useState('')
+    const [firstClass, setfirstClass] = useState('')
     const [trainDate, settrainDate] = useState('')
     const history = useHistory();
     const { id } = useParams();
 
     const saveOrUpdateTrain = (e) => {
         e.preventDefault();
-        const TrainDetails = { trainNo, startPoint, endPoint, arrivalTime, deptTime, duration, noOfSeats, economyClass, premiumEconomy, businessClass, trainDate }
+        const TrainDetails = { trainNo, startPoint, endPoint, arrivalTime, deptTime, duration, noOfSeats, sleeperClass, SecondClass, firstClass, trainDate }
         if (id) {
             AdminService.upDateTrain(id, TrainDetails).then((response) => {
                 var e=JSON.stringify(response.data);
@@ -52,9 +52,9 @@ const AddTrain = () => {
             setdeptTime(response.data.deptTime)
             setduration(response.data.duration)
             setnoOfSeats(response.data.noOfSeats)
-            setfirstClass(response.data.firstClass)
-            setsecondClass(response.data.secondClass)
             setsleeperClass(response.data.sleeperClass)
+            setSecondClass(response.data.SecondClass)
+            setfirstClass(response.data.firstClass)
             settrainDate(response.data.trainDate)
 
         }).catch(error => {
@@ -176,32 +176,6 @@ const AddTrain = () => {
 
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">FirstClass Fare</label>
-
-                                    <input
-                                        type="text"
-                                        placeholder="Enter First Class Fare"
-                                        name="firstClass"
-                                        className="form-control"
-                                        value={firstClass}
-                                        onChange={(e) => setfirstClass(e.target.value)}>
-                                    </input>
-
-                                </div>
-                                <div className="form-group mb-2">
-                                    <label className="form-label">SecondClass Fare</label>
-
-                                    <input
-                                        type="text"
-                                        placeholder="Enter  Second Class Fare"
-                                        name="SecondClass"
-                                        className="form-control"
-                                        value={secondClass}
-                                        onChange={(e) => setsecondClass(e.target.value)}>
-                                    </input>
-
-                                </div>
-                                <div className="form-group mb-2">
                                     <label className="form-label">SleeperClass Fare</label>
 
                                     <input
@@ -211,6 +185,32 @@ const AddTrain = () => {
                                         className="form-control"
                                         value={sleeperClass}
                                         onChange={(e) => setsleeperClass(e.target.value)}>
+                                    </input>
+
+                                </div>
+                                <div className="form-group mb-2">
+                                    <label className="form-label">SecondClass Fare</label>
+
+                                    <input
+                                        type="text"
+                                        placeholder="Enter Second Class Fare"
+                                        name="SecondClass"
+                                        className="form-control"
+                                        value={SecondClass}
+                                        onChange={(e) => setSecondClass(e.target.value)}>
+                                    </input>
+
+                                </div>
+                                <div className="form-group mb-2">
+                                    <label className="form-label">FirstClass Fare</label>
+
+                                    <input
+                                        type="text"
+                                        placeholder="Enter First Class Fare"
+                                        name="firstClass"
+                                        className="form-control"
+                                        value={firstClass}
+                                        onChange={(e) => setfirstClass(e.target.value)}>
                                     </input>
 
                                 </div>

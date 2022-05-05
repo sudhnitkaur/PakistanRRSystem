@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { useHistory, useParams } from 'react-router-dom';
+
+import { useHistory } from 'react-router-dom';
 import CheckinService from '../Services/CheckinService'
 
 
@@ -48,10 +48,10 @@ const Checkin = () => {
                             <h5>Email: {Ticket.email}</h5>
                             <h5>Gender: {Ticket.gender}</h5>
                             <h5>SeatNo: {Ticket.seatNo}</h5>
-                            <h5>Flight No: {Ticket.trainNo}</h5>
+                            <h5>Train No: {Ticket.trainNo}</h5>
                             <h5>StartPoint: {Ticket.startPoint}</h5>
                             <h5>EndPoint: {Ticket.endPoint}</h5>
-                            <h5>Flight Date: {Ticket.trainDate}</h5>
+                            <h5>Train Date: {Ticket.trainDate}</h5>
                             <h5> Departure Time: {Ticket.deptTime}</h5>
                             <h5> Duration: {Ticket.duration}</h5>
                             <h5> Class Type: {Ticket.classType}</h5>

@@ -42,9 +42,9 @@ const TrainList = () => {
                     <th>DeptTime </th>
                     <th>Duration </th>
                     <th>NoOfSeats </th>
-                    <th>FirstClass </th>
-                    <th>SecondClass </th>
                     <th>SleeperClass </th>
+                    <th>SecondSleeper </th>
+                    <th>FirstClass </th>
                     <th>TrainDate </th>
                     <th>Actions</th>
                 </thead>
@@ -59,9 +59,9 @@ const TrainList = () => {
                                     <td>{TrainDetails.deptTime}</td>
                                     <td>{TrainDetails.duration}</td>
                                     <td>{TrainDetails.noOfSeats}</td>
-                                    <td>{TrainDetails.FirstClass}</td>
+                                    <td>{TrainDetails.sleeperClass}</td>
                                     <td>{TrainDetails.SecondClass}</td>
-                                    <td>{TrainDetails.SleeperClass}</td>
+                                    <td>{TrainDetails.firstClass}</td>
                                     <td>{TrainDetails.trainDate}</td>
                                     <td> <Link className="btn btn-info" to={`/edit-train/${TrainDetails.trainNo}`}> Update </Link>
                                         <button className="btn btn-danger" onClick={() => deleteTrain(TrainDetails.trainNo)}

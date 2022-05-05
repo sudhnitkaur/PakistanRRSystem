@@ -1,6 +1,6 @@
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { Component, useContext, useState, Fragment } from "react";
+import React, { Component, useContext, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import { useHistory, useLocation } from "react-router-dom";
 import * as Yup from "yup";
@@ -42,23 +42,23 @@ const Login = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const History = useHistory();
+  const history = useHistory();
   const location = useLocation();
   const fromUrl = _get(location, "state.from.pathname");
   const signInSuccess = (userData) => {
     if (fromUrl) {
-      History.push(fromUrl);
+      history.push(fromUrl);
     } else {
-      History.push("/adminTrainList");
+      history.push("/adminTrainList");
     }
   };
 
 
   const signInFailure = (userData) => {
     if (fromUrl) {
-      History.push(fromUrl);
+      history.push(fromUrl);
     } else {
-      History.push("/login");
+      history.push("/login");
     }
   };
 

@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 import PaymentService from '../Services/PaymentService'
-import { useHistory} from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
 const PaymentForm = () => {
@@ -9,9 +9,9 @@ const PaymentForm = () => {
     const [bankName, setbankName] = useState('')
     const [cardNo, setcardNo] = useState('')
     const [cvv, setcvv] = useState('')
-    const [classType] = useState('')
-    const [fare] = useState('')
-    const navigate = useHistory();
+    const [classType, setclassType] = useState('')
+    const [fare, setfare] = useState('')
+    const history = useHistory();
 
     const doPayment = (e) => {
         e.preventDefault();
@@ -21,7 +21,7 @@ const PaymentForm = () => {
               var e=JSON.stringify(response.data);
               alert(e);
                 console.log(response);
-                navigate('/checkin')
+                history.push('/checkin')
             }).catch(error => {
                 console.log(error)
             })

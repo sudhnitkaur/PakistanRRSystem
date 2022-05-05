@@ -2,16 +2,15 @@ import React from 'react'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Showcase from './components/Showcase'
+import Showcase from './components/HomePage'
 import Footer from './components/Footer'
 import Login from './components/Login.js'
-import Destinations from './components/Destinations'
-import Error from './components/Error'
+import Services from './components/Services'
 import Search from './components/Search'
 import Checkin from './components/Checkin'
 import TrainList from './components/TrainList'
 import AddTrain from './components/AddTrain'
-import BookingForm from './components/BookingForm'
+
 import PaymentForm from './components/PaymentForm'
 
 
@@ -25,10 +24,10 @@ function App() {
 
           <Route exact path="/">
             <Showcase />
-            <Destinations />
+            <Services />
             <Footer />
           </Route>
-
+          
           <Route exact path="/login">
             <Login />
 
@@ -50,10 +49,7 @@ function App() {
           </Route>
 
 
-          <Route exact path="/booking">
-            <BookingForm></BookingForm>
-            <Footer />
-          </Route>
+          
 
 
           <Route exact path="/edit-train/:trainId">
@@ -76,10 +72,7 @@ function App() {
             <Footer />
           </Route>
 
-          <Route path='*'>
-            <Error />
-            <Footer />
-          </Route>
+          
 
         </Switch>
 

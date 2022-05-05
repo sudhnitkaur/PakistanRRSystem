@@ -1,5 +1,5 @@
 import axios from'axios'
-const PAY_TRAIN_URL ='http://localhost:8083/pay/addPayment/';
+const PAY_TRAIN_URL ='';
 
 class PaymentService{
 

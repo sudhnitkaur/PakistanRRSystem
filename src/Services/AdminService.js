@@ -1,10 +1,10 @@
 import axios from'axios'
-const TRAIN_SEARCH_ALL_URL ='http://localhost:8081/admin/Access/findAll';
-const TRAIN_ADD_TRAIN_URL ='http://localhost:8081/admin/Access/add';
-const TRAIN_GET_TRAIN_BY_ID_URL ='http://localhost:8081/admin/Access/find';
-const TRAIN_UPDATE_TRAIN_BY_ID_URL ='http://localhost:8081/admin/Access/update';
-const TRAIN_DELETE_TRAIN_BY_ID_URL ='http://localhost:8081/admin/Access/delete';
-const TRAIN_ADMIN_LOGIN_URL='http://localhost:8081in/Access/s/admignup'
+const TRAIN_SEARCH_ALL_URL ='';
+const TRAIN_ADD_TRAIN_URL ='';
+const TRAIN_GET_TRAIN_BY_ID_URL ='';
+const TRAIN_UPDATE_TRAIN_BY_ID_URL ='';
+const TRAIN_DELETE_TRAIN_BY_ID_URL ='';
+const TRAIN_ADMIN_LOGIN_URL=''
 
 
 class AdminService{

@@ -23,17 +23,17 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background-color: rgb(40, 182, 207);
+  background-color: rgb(187, 187, 171);
 }
 
 .header .links {
   margin: 0 10px;
-  color: #f1f1f1;
+  color: #000000;
   text-decoration: none;
 }
 
 .showcase {
-  background: url('https://media.newyorker.com/photos/5ea9ff8878fed0000976e370/master/w_2240,c_limit/200511_r36409web.gif')
+  background: url('https://bestanimations.com/media/trains/1035164040speeding-train-view-gif.gif')
     no-repeat center/cover;
   height: 750px;
 }
@@ -46,7 +46,7 @@ body {
   justify-content: center;
   height: 750px;
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: rgb(212, 212, 212);
 }
 
 .showcase .showcase-overlay h1 {
@@ -54,28 +54,28 @@ body {
   padding-bottom: 20px;
 }
 
-.destinations {
+.services {
   padding: 50px;
   text-align: center;
-  background-color: rgb(47, 218, 218);
+  background-color: rgb(128, 124, 112);
 }
 
-.destinations h3 {
+.services h3 {
   font-size: 30px;
   padding: 10px;
   text-align: center;
 }
 
-.destinations .grid div {
-  background-color: #f1f1f1;
+.services .grid div {
+  background-color: #f0ecd4;
   margin-bottom: 30px;
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
   text-align: center;
 }
 
-.destinations .grid div img {
-  border-radius: 10px;
+.services .grid div img {
+  border-radius: 150px;
   
 }
 
@@ -87,7 +87,7 @@ body {
 .footer ul {
   list-style-type: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: circle;
   align-items: center;
   justify-content: center;
 }
@@ -100,7 +100,7 @@ body {
   background-color: transparent;
   color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 100px;
   padding: 5px;
   margin: 10px 0;
   cursor: pointer;
@@ -131,7 +131,7 @@ body {
 }
 
 .login .form-control button {
-  background-color: #2c7f86;
+  background-color: #9adbe0;
   padding: 8px;
   border: 2px solid #2c7f86;
   color: #fff;
@@ -163,14 +163,14 @@ body {
     font-size: 18px;
   }
 
-  .destinations .grid {
+  .services .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
    
   }
 
-  .destinations .grid div img {
+  .services .grid div img {
     height: 150px;
     width: 300px;
   }
@@ -207,8 +207,33 @@ body {
   box-sizing: border-box;
   text-align: left;
 }
-login .form-control button:hover {
+.login .form-control button:hover {
   background-color: black;
 }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
