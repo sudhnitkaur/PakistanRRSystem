@@ -22,6 +22,10 @@ const Header = () => {
             USER
           </Link>
 
+          <Link className='links' to='/booking'>
+            Book
+          </Link>
+
           <Link className='links' to='/checkin'>
             Checkin
           </Link>

@@ -11,18 +11,6 @@ const Services = () => {
       
 
      
-   
-
-
-
-
-
-
-
-
-
-
-        
       
       <div className='grid'>
         <div>

@@ -229,7 +229,10 @@ const AddTrain = () => {
                                 </div>
                                 <button className="btn btn-success" onClick={(e) => saveOrUpdateTrain(e)} >Submit </button>
                                 <Link to="/login" className="btn btn-danger"> Cancel </Link>
-                            
+                               
+                                       
+
+
                             </form>
                             <br></br>
                         </div>

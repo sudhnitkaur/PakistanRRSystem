@@ -17,7 +17,7 @@ const LoginSchema = Yup.object().shape({
 
 const Login = () => {
 
-  /**To Show Add Toastify Text */
+  /* To Show Add Toastify Text */
 
   const notify = () => {
     toast.success("Admin LoggedIn Successfully!!!", {
@@ -145,7 +145,7 @@ const Login = () => {
               <button
                 className="btn btn-success"
                 type="submit"
-                onClick={() => { }}
+                onClick={(e) => signInSuccess (e)}
               >
                 Sign In
               </button>
