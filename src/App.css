@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+*{
+    font-family:'Sora', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.Slider, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;}
+
+    .Slider
+      {  font-family: Open sans, sans-serif;
+        height: 100vh;
+        background: #f1f1f1;
+        overflow: hidden;}
+      
+    
+  

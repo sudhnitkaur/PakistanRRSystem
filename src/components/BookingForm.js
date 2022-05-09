@@ -37,11 +37,13 @@ const BookingForm = () => {
 
 
   return (
-    <div>
+    <div style={{
+      backgroundColor: 'grey'}}>
       <br></br>
       <div className="container">
         <div className="row">
-          <div className="card col-md-6 offset-md-3 offset-md-3">
+          <div className="card col-md-6 offset-md-3 offset-md-3" style={{
+            backgroundColor: 'pink'}}>
           <br></br><br></br>
             <h2 className="text-center">Book Train</h2>
             <div className="card-body">

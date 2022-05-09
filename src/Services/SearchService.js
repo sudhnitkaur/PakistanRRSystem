@@ -1,5 +1,5 @@
 import axios from'axios'
-const TRAIN_SEARCH_BY_PARAMS_URL ='';
+const TRAIN_SEARCH_BY_PARAMS_URL ='http://localhost:8084/user/findBy/{startPoint}/{endPoint}/{trainDate}';
 class SearchService{
 
     getTrainById(startPoint,endPoint,trainDate){

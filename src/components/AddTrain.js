@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import AdminService from '../Services/AdminService'
 import { Link } from 'react-router-dom'
-
+import train from '../assets/train.png'
+import image5 from '../assets/image5.jpg'
 const AddTrain = () => {
+    const [trainName, settrainName] = useState('')
     const [trainNo, settrainNo] = useState('')
     const [startPoint, setstartPoint] = useState('')
     const [endPoint, setendPoint] = useState('')
@@ -46,6 +48,7 @@ const AddTrain = () => {
     useEffect(() => {
         AdminService.getTrainById(trainNo).then((response) => {
             settrainNo(response.data.trainNo)
+            settrainName(response.data.trainName)
             setstartPoint(response.data.startPoint)
             setendPoint(response.data.endPoint)
             setarrivalTime(response.data.arrivalTime)
@@ -72,12 +75,18 @@ const AddTrain = () => {
         }
     }
     return (
-        <div>
+        <div style={{ 
+            backgroundImage: `url(${image5})` 
+          }}>
+         
+         
             <br></br><br></br>
-            <div className="container">
+            <div className="container"  >
+          
                 <div className="row">
-                    <div className="card col-md-6 offset-md-3 offset-md-3">
-
+                    <div className="card col-md-6 offset-md-3 offset-md-3" style={{
+        backgroundColor: 'pink'}}>
+                   
                     <br></br>
                         {
                             title()
@@ -94,6 +103,18 @@ const AddTrain = () => {
                                         className="form-control"
                                         value={trainNo}
                                         onChange={(e) => settrainNo(e.target.value)}>
+                                    </input>
+
+                                    
+                                    <label className="form-label">Train Name</label>
+
+                                    <input
+                                        type="text"
+                                        placeholder="Enter train Name"
+                                        name="trainName"
+                                        className="form-control"
+                                        value={trainName}
+                                        onChange={(e) => settrainName(e.target.value)}>
                                     </input>
 
                                 </div>

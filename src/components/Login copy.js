@@ -15,12 +15,12 @@ const LoginSchema = Yup.object().shape({
   username: Yup.string().required("username is required!"),
 });
 
-const Login = () => {
+const UserLogin = () => {
 
   /* To Show Add Toastify Text */
 
   const notify = () => {
-    toast.success("Admin LoggedIn Successfully!!!", {
+    toast.success("User LoggedIn Successfully!!!", {
       position: "top-center",
       autoClose: 5000,
     });
@@ -49,7 +49,7 @@ const Login = () => {
     if (fromUrl) {
       history.push(fromUrl);
     } else {
-      history.push("/adminTrainList");
+      history.push("/search");
     }
   };
 
@@ -58,7 +58,7 @@ const Login = () => {
     if (fromUrl) {
       history.push(fromUrl);
     } else {
-      history.push("/login");
+      history.push("/search");
     }
   };
 
@@ -131,7 +131,7 @@ const Login = () => {
          <section className='showcase login'>
         <Form> <div className="container" >
           <div className='showcase-overlay'>
-            <h1 className="booking">ADMIN LOGIN</h1>
+            <h1 className="booking">USER LOGIN</h1>
             <hr></hr>
             <div className="inner">
               <label><b>User Name</b></label>
@@ -157,4 +157,4 @@ const Login = () => {
     </Formik>
   );
 };
-export default Login;
+export default UserLogin;

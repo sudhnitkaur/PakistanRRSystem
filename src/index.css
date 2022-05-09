@@ -18,19 +18,7 @@ body {
     sans-serif;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: rgb(187, 187, 171);
-}
 
-.header .links {
-  margin: 0 10px;
-  color: #000000;
-  text-decoration: none;
-}
 
 .showcase {
   background: url('https://bestanimations.com/media/trains/1035164040speeding-train-view-gif.gif')
@@ -98,11 +86,11 @@ body {
 
 .footer ul li button {
   background-color: transparent;
-  color: #fff;
+  color: rgb(7, 7, 7);
   border: none;
   border-radius: 100px;
-  padding: 5px;
-  margin: 10px 0;
+  padding: 50px;
+  margin: 100px 0;
   cursor: pointer;
   font-family: inherit;
   transition: background-color 0.4s ease-in-out;
@@ -146,6 +134,42 @@ body {
   transition: background-color 0.4s;
 }
 
+
+form{
+  box-sizing: border-box;
+  margin: 100px;
+  padding: 40opx;
+  border: 1px solid rgb(105, 76, 33);
+}
+
+
+
+.form-box h5{
+  font-size: 350px ;
+  text-align: center;
+  color: #F55A00;
+  margin: 0 0 .5vh 0;
+}
+.form-box label{
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  margin: 0 0 2vh 0;
+}
+
+.form-box input, textarea{
+  display: block;
+  width: 100%;
+  padding: .5rem .8rem .5rem .8rem;
+  margin: .9vw 0 ;
+  border:0;
+  border-radius: 50px;
+  font-size: 200px;
+}
+
+.form-box textarea{
+  height: 15vh;
+}
 
 
 
@@ -210,6 +234,13 @@ body {
 .login .form-control button:hover {
   background-color: black;
 }
+
+
+
+
+
+
+
 
 }
 

@@ -15,7 +15,9 @@ const Services = () => {
       <div className='grid'>
         <div>
           <img src={image1} alt='service-1' />
-          <h3>Hotels</h3>
+          <h3>
+          <a href="https://www.trivago.in" >Hotels</a>
+          </h3>
           <p>
                Tell us your plans and we’ll find the best room for you:
 
@@ -25,7 +27,10 @@ const Services = () => {
 
         <div>
           <img src={image2} alt='service-2' />
-          <h3>Holiday Packages</h3>
+          <h3>
+          <a href="https://www.makemytrip.com">Holiday Packages</a>
+            
+          </h3>
           <p>
           
         Explore, Journey, Discover, Adventure. Making your heart want to return. Don'T Be A Tourist, Be A Traveler. Every Day Is Different.
@@ -34,7 +39,9 @@ const Services = () => {
 
         <div>
           <img src={image3} alt='service-3' />
-          <h3>E-Catering</h3>
+          <h3>
+            
+            <a href="https://www.zomato.com">E-Catering</a></h3>
           <p>
          Get restaurant food delivered right at your seat
           </p>

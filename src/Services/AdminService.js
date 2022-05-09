@@ -4,7 +4,7 @@ const TRAIN_ADD_TRAIN_URL ='http://localhost:8081/admin/Access/add';
 const TRAIN_GET_TRAIN_BY_ID_URL ='http://localhost:8081/admin/Access/find/{trainNo}';
 const TRAIN_UPDATE_TRAIN_BY_ID_URL ='http://localhost:8081/admin/Access/update/{trainNo}';
 const TRAIN_DELETE_TRAIN_BY_ID_URL ='http://localhost:8081/admin/Access/delete/{trainNo}';
-const TRAIN_ADMIN_SIGNUP_URL='http://localhost:8081/admin/Access/signup'
+const TRAIN_ADMIN_LOGIN_URL='http://localhost:8081/admin/Access/signup'
 
 
 class AdminService{
@@ -30,7 +30,7 @@ deleteTrain(trainNo){
 }
 
 adminLogin(adminDetails){
-    return axios.post(TRAIN_ADMIN_SIGNUP_URL , adminDetails );
+    return axios.post(TRAIN_ADMIN_LOGIN_URL , adminDetails );
 }
 
 }

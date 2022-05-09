@@ -1,5 +1,4 @@
 import React from 'react'
-import { Wave } from "react-animated-text";
 const Showcase = () => {
   return (
     <section className='showcase'>

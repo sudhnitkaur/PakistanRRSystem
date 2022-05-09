@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import SearchService from '../Services/SearchService'
+import BookingForm from './BookingForm';
 import { Link } from 'react-router-dom'
+
 
 const Search = () => {
     const [startPoint, setstartPoint] = useState('')
@@ -88,6 +90,14 @@ const Search = () => {
                                         </tbody>
                                     </table>
                                 </div>
+                                <br>
+                                </br><br></br>
+
+                                <br>
+                                </br><br></br>
+                                <br>
+                                </br><br></br>
+                                <Link className="btn btn-success" onClick={(e) => BookingForm(e)}  > Book A Ticket</Link>
                             </div>
                         </div>
                     </form>
