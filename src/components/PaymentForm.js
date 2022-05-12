@@ -2,7 +2,7 @@ import React, { useState} from 'react'
 import PaymentService from '../Services/PaymentService'
 import { useHistory, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
-
+import image5 from '../assets/image5.jpg'
 const PaymentForm = () => {
 
     const [pnrNo, setpnrNo] = useState('')
@@ -33,9 +33,12 @@ const PaymentForm = () => {
         return (
             <div>
       <br></br>
-      <div className="container">
+      <div className="container" style={{ 
+      backgroundImage: `url(${image5})` 
+    }}>
         <div className="row">
-          <div className="card col-md-6 offset-md-3 offset-md-3">
+          <div className="card col-md-6 offset-md-3 offset-md-3" style={{
+        backgroundColor: 'beige'}}>
           <br></br><br></br>
             <h2 className="text-center">Payment</h2>
             <div className="card-body">
@@ -54,8 +57,7 @@ const PaymentForm = () => {
 
                 </div>
                 <div className="form-group mb-2">
-                  <label className="form-label">BankName</label>
-
+                  <label className="form-label">BankName  : </label>
                   <input
                     type="text"
                     placeholder="Enter Bank Name"
@@ -65,9 +67,10 @@ const PaymentForm = () => {
                     onChange={(e) => setbankName(e.target.value)}>
                   </input>
 
+
                 </div>
                 <div className="form-group mb-2">
-                  <label className="form-label">Card No</label>
+                  <label className="form-label">Card No :</label>
 
                   <input
                     type="text"
@@ -95,7 +98,8 @@ const PaymentForm = () => {
                 </div>
 
                 <Link className="btn btn-success" onClick={(e) => doPayment(e)} >Pay</Link>
-                <Link className="btn btn-info" to='/checkin'> Get Checkin </Link>
+                <Link className="btn btn-info" to='/checkin'> Get Checkin </Link><br></br>
+               <Link className="btn btn-danger" to='/booking'> Back </Link>
               </form>
             </div>
 

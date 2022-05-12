@@ -5,7 +5,7 @@ import BookingForm from './BookingForm';
 import { Link } from 'react-router-dom'
 
 
-const Search = () => {
+const AllSearch = () => {
     const [startPoint, setstartPoint] = useState('')
     const [endPoint, setendPoint] = useState('')
     const [trainDate, settrainDate] = useState('')
@@ -67,7 +67,7 @@ const Search = () => {
                                         <th>SecondClass </th>
                                         <th>FirstClass </th>
                                         <th>TrainDate </th>                                            
-                                        <th>Actions</th>
+                                        
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -84,8 +84,8 @@ const Search = () => {
                                                         <td>{TrainDetails.sleeperClass}</td>
                                                         <td>{TrainDetails.SecondClass}</td>                                                        <td>{TrainDetails.firstClass}</td>
                                                         <td>{TrainDetails.trainDate}</td>
-                                                        <td> <Link className="btn btn-info" to='/booking'> Book </Link>
-                                                        </td>
+                                                        
+                                                        
                                                             
 
 
@@ -103,7 +103,7 @@ const Search = () => {
                                 <br>
                                 </br><br></br>
                               
-                                <Link className="btn btn-info" to='/booking'> Book A Ticket </Link> 
+                                
                             </div>
                         </div>
                     </form>
@@ -113,4 +113,4 @@ const Search = () => {
     )
 }
 
-export default Search
+export default AllSearch

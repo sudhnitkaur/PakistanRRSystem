@@ -1,8 +1,9 @@
+
 import React, { useState} from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import BookService from '../Services/BookService'
 import { Link } from 'react-router-dom'
-
+import image5 from '../assets/image5.jpg'
 const BookingForm = () => {
 
   const [name, setname] = useState('')
@@ -32,24 +33,35 @@ const BookingForm = () => {
         }).catch(error => {
             console.log(error)
         })
-
+        // setTimeout(()=>{
+        //   console.log("i'm here")
+          
+        //   window.location.href = "http://localhost:9004/";                 //it will redirect to paytm port
+    
+        // },2000)
     }
+const paytm = (e) => {setTimeout(()=>{
+  console.log("i'm here")
+  
+  window.location.href = "http://localhost:9004/";                 //it will redirect to paytm port
 
+},2000) }
 
   return (
-    <div style={{
-      backgroundColor: 'grey'}}>
+    <div style={{ 
+      backgroundImage: `url(${image5})` 
+    }} >
       <br></br>
-      <div className="container">
-        <div className="row">
+      <div className="container" >
+        <div className="row" >
           <div className="card col-md-6 offset-md-3 offset-md-3" style={{
-            backgroundColor: 'pink'}}>
+            backgroundColor: 'beige'}}>
           <br></br><br></br>
-            <h2 className="text-center">Book Train</h2>
+            <h2 className="text-center">Book Your Ticket</h2>
             <div className="card-body">
               <form>
                 <div className="form-group mb-2">
-                  <label className="form-label">Name</label>
+                  <label className="form-label">Name :</label>
 
                   <input
                     type="text"
@@ -62,7 +74,7 @@ const BookingForm = () => {
 
                 </div>
                 <div className="form-group mb-2">
-                  <label className="form-label">Email</label>
+                  <label className="form-label">Email :</label>
 
                   <input
                     type="text"
@@ -75,7 +87,7 @@ const BookingForm = () => {
 
                 </div>
                 <div className="form-group mb-2">
-                  <label className="form-label">Gender</label>
+                  <label className="form-label">Gender : .</label>
 
                   <input
                     type="text"
@@ -85,10 +97,10 @@ const BookingForm = () => {
                     value={gender}
                     onChange={(e) => setgender(e.target.value)}>
                   </input>
-
+                
                 </div>
                 <div className="form-group mb-2">
-                  <label className="form-label">No of Adults</label>
+                  <label className="form-label">No of Passengers :</label>
 
                   <input
                     type="text"
@@ -101,7 +113,7 @@ const BookingForm = () => {
 
                 </div>
                 <div className="form-group mb-2">
-                  <label className="form-label">No of Childrens</label>
+                  <label className="form-label">No of Childrens :</label>
 
                   <input
                     type="text"
@@ -114,7 +126,7 @@ const BookingForm = () => {
 
                 </div>
                 <div className="form-group mb-2">
-                  <label className="form-label">Age</label>
+                  <label className="form-label">Age :</label>
 
                   <input
                     type="text"
@@ -127,7 +139,7 @@ const BookingForm = () => {
 
                 </div>
                 <div className="form-group mb-2">
-                  <label className="form-label">TrainNo</label>
+                  <label className="form-label">Train No. :</label>
 
                   <input
                     type="text"
@@ -140,7 +152,7 @@ const BookingForm = () => {
 
                 </div>
                 <div className="form-group mb-2">
-                  <label className="form-label">StartPoint</label>
+                  <label className="form-label">Origin :</label>
 
                   <input
                     type="text"
@@ -153,7 +165,7 @@ const BookingForm = () => {
 
                 </div>
                 <div className="form-group mb-2">
-                  <label className="form-label">EndPoint</label>
+                  <label className="form-label">Destination :</label>
 
                   <input
                     type="text"
@@ -166,7 +178,7 @@ const BookingForm = () => {
 
                 </div>
                 <div className="form-group mb-2">
-                  <label className="form-label">ClassType</label>
+                  <label className="form-label">ClassType :</label>
 
                   <input
                     type="text"
@@ -179,10 +191,16 @@ const BookingForm = () => {
 
                 </div>
 
-                <Link className="btn btn-success" onClick={(e) => bookedTrain(e)}  >Submit </Link>
-                <Link className="btn btn-info" to='/payment'> Goto Payment </Link> 
-               
+                <Link className="btn btn-success" onClick={(e) => bookedTrain(e)}  >Submit </Link> <br></br>
+                <Link className="btn btn-info" onClick={(e) => paytm(e)}  >paytm </Link>
+             
+                <div className='logout'><Link className="btn btn-info" to='/payment' >   Goto Payment </Link> </div>
+                <br></br>
+                <Link to="/search" className="btn btn-danger" style={{
+            textAlign : 'right'}}> Back </Link>
+            
               </form>
+            
             </div>
 
           </div>

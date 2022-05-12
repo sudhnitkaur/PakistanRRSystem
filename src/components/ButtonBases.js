@@ -3,20 +3,20 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
-import hotel from '../assets/hotel.jpeg'
+import  hotel from '../assets/hotel.jpeg'
 const images = [
   {
-      url: '{hotel}',
+      url: 'hotel.jpeg',
     title: 'Hotels',
     width: '40%',
   },
   {
-    url: '/static/images/buttons/hotel.jpeg',
+    url: '/assets/hotel.jpeg',
     title: 'Holidays',
     width: '30%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
+    url: '/assets/camera.jpg',
     title: 'E-Catering',
     width: '30%',
   },
@@ -97,7 +97,7 @@ export default function ButtonBases() {
             width: image.width,
           }}
         >
-          <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
+          <ImageSrc style={{ backgroundImage: `url(${images.url})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />
           <Image>
             <Typography

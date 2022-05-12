@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-
+import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom';
 import CheckinService from '../Services/CheckinService'
-
+import image5 from '../assets/image5.jpg'
 
 const Checkin = () => {
     const [pnrNo, setpnrNo] = useState('')
@@ -21,16 +21,20 @@ const Checkin = () => {
     }
 
     return (
-        <>
-            <section className='showcase login'>
+        < div style={{ 
+            backgroundImage: `url(${image5})` 
+          }}>
+            <section className='showcase login'>  <div className='logout'><Link to="/userlogin" className="btn btn-success" >Logout</Link> </div>
+            <Link to="/payment" className="btn btn-danger"> Back </Link>
                 <div className='showcase-overlay'>
-                    <form className='form-control'>
-                        <label>PNR Number</label>
+                    <form className='form-control' style={{
+            backgroundColor: 'beige'}}>
+                        <label>PNR Number :</label>
                         <input
                             type='number'
                             name='pnrNo'
                             id='pnrNo'
-                            placeholder='Enter PNR Number'
+                            placeholder='Enter your auto generated PNR Number'
                             value={pnrNo}
                             onChange={(e) => setpnrNo(e.target.value)}
                             required
@@ -43,19 +47,19 @@ const Checkin = () => {
                             <h4>Ticket Details</h4>
                             <br></br>
 
-                            <h5>PNR NO: {Ticket.pnrNo}</h5>
-                            <h5>Name: {Ticket.name}</h5>
-                            <h5>Email: {Ticket.email}</h5>
-                            <h5>Gender: {Ticket.gender}</h5>
-                            <h5>SeatNo: {Ticket.seatNo}</h5>
-                            <h5>Train No: {Ticket.trainNo}</h5>
-                            <h5>StartPoint: {Ticket.startPoint}</h5>
-                            <h5>EndPoint: {Ticket.endPoint}</h5>
-                            <h5>Train Date: {Ticket.trainDate}</h5>
-                            <h5> Departure Time: {Ticket.deptTime}</h5>
-                            <h5> Duration: {Ticket.duration}</h5>
-                            <h5> Class Type: {Ticket.classType}</h5>
-                            <h5> Payment: {Ticket.payment}</h5>
+                            <h5>PNR No. : {Ticket.pnrNo}</h5>
+                            <h5>Name : {Ticket.name}</h5>
+                            <h5>Email : {Ticket.email}</h5>
+                            <h5>Gender : {Ticket.gender}</h5>
+                            <h5> Allocated Seat No : {Ticket.seatNo}</h5>
+                            <h5>Train No. : {Ticket.trainNo}</h5>
+                            <h5>Origin : {Ticket.startPoint}</h5>
+                            <h5>Destination : {Ticket.endPoint}</h5>
+                            <h5>Train Date : {Ticket.trainDate}</h5>
+                            <h5> Departure Time : {Ticket.deptTime}</h5>
+                            <h5> Duration : {Ticket.duration}</h5>
+                            <h5> Class Type : {Ticket.classType}</h5>
+                            <h5> Payment : {Ticket.payment}</h5>
                         </div>
 
 
@@ -65,7 +69,7 @@ const Checkin = () => {
 
 
             </section>
-        </>
+        </div>
     )
 }
 

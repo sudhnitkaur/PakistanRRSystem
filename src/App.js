@@ -14,26 +14,40 @@ import AddTrain from './components/AddTrain'
 import BookingForm from './components/BookingForm'
 import Error from './components/Error'
 import PaymentForm from './components/PaymentForm'
-import Navbar from './components/Navbar'
-import Form from './components/Form'
+import Header from './components/Header'
 import { Slider } from '@material-ui/core'
 import ButtonBases from './components/ButtonBases'
-
+import PaymentHistory from './components/PaymentHistory'
+import UserHistory from './components/UserHistory'
+import Register from './components/Register'
+import Banner from './components/Banner'
+import Testimonial from './components/Testimonial'
+import Servicesinfo from './components/Servicesinfo'
+import './Testimonial.css'
+import ListTrain from './components/ListTrain'
+import AllSearch from './components/AllSearch'
 
 function App() {
   return (
     <div>
       <Router>
-        <Navbar />
+        <Header />
 
         
         <Switch>
 
           <Route exact path="/">
+
+
+           
             <Showcase />
-            <Services />
-          
             <ButtonBases/>
+            <Servicesinfo/>
+            <Services />
+            <Testimonial/>
+            
+            <Banner/>
+            
             <Footer />
           </Route>
           
@@ -49,10 +63,32 @@ function App() {
             <UserLogin/>
             <Footer />
           </Route>
-          
+          <Route exact path="/paymenthistory">
+            <PaymentHistory/>
+            <Footer />
+          </Route>
+          <Route exact path="/userhistory">
+            <UserHistory/>
+            <Footer />
+          </Route>
+          <Route exact path="/allsearch">
+            <AllSearch/>
+            <Footer />
+          </Route>
           <Route exact path="/buttonbases">
             <ButtonBases/>
             <Footer />
+          </Route>
+
+          <Route exact path="/register">
+            <Register/>
+        
+          </Route>
+
+          
+          <Route exact path="/banner">
+            <Banner/>
+        
           </Route>
 
 
@@ -60,7 +96,6 @@ function App() {
             <Checkin></Checkin>
             <Footer />
           </Route>
-          
 
           <Route exact path="/payment">
             <PaymentForm></PaymentForm>
@@ -81,6 +116,7 @@ function App() {
 
           <Route exact path="/addTrain">
             <AddTrain />
+            
             <Footer />
           </Route>
 
@@ -95,16 +131,15 @@ function App() {
           </Route>
           <Route exact path="/booking">
             <BookingForm></BookingForm>
+            <ListTrain/>
             <Footer />
           </Route>
-          <Route exact path="/form">
-            <Form/>
-            <Footer />
-          </Route>
+          
           <Route path='*'>
             <Error />
             <Footer />
           </Route>
+          
           
         </Switch>
         </Router>

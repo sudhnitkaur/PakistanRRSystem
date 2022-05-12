@@ -56,7 +56,7 @@ const AddTrain = () => {
             setduration(response.data.duration)
             setnoOfSeats(response.data.noOfSeats)
             setsleeperClass(response.data.sleeperClass)
-            setSecondClass(response.data.SecondClass)
+            setSecondClass(response.data.secondClass)
             setfirstClass(response.data.firstClass)
             settrainDate(response.data.trainDate)
 
@@ -85,16 +85,16 @@ const AddTrain = () => {
           
                 <div className="row">
                     <div className="card col-md-6 offset-md-3 offset-md-3" style={{
-        backgroundColor: 'pink'}}>
+        backgroundColor: 'beige'}}>
                    
-                    <br></br>
+                    <br></br>    <br></br>    <br></br>    <br></br>
                         {
                             title()
                         }
-                        <div className="card-body">
+                        <div className="card-body" >
                             <form>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">TrainNo</label>
+                                    <label className="form-label">Train No : </label>
 
                                     <input
                                         type="text"
@@ -106,7 +106,7 @@ const AddTrain = () => {
                                     </input>
 
                                     
-                                    <label className="form-label">Train Name</label>
+                                    <label className="form-label">Train Name :</label>
 
                                     <input
                                         type="text"
@@ -119,7 +119,7 @@ const AddTrain = () => {
 
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">StartPoint</label>
+                                    <label className="form-label">Origin :</label>
 
                                     <input
                                         type="text"
@@ -132,7 +132,7 @@ const AddTrain = () => {
 
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">EndPoint</label>
+                                    <label className="form-label">Destination :</label>
 
                                     <input
                                         type="text"
@@ -145,7 +145,7 @@ const AddTrain = () => {
 
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">ArrivalTime</label>
+                                    <label className="form-label">Arrival Time :</label>
 
                                     <input
                                         type="text"
@@ -158,7 +158,7 @@ const AddTrain = () => {
 
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">DeptTime</label>
+                                    <label className="form-label">Departure Time :</label>
 
                                     <input
                                         type="text"
@@ -171,7 +171,7 @@ const AddTrain = () => {
 
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">Duration</label>
+                                    <label className="form-label">Duration :</label>
 
                                     <input
                                         type="text"
@@ -184,7 +184,7 @@ const AddTrain = () => {
 
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">NoOfSeats</label>
+                                    <label className="form-label"> Total No. of Seats :</label>
 
                                     <input
                                         type="text"
@@ -197,7 +197,7 @@ const AddTrain = () => {
 
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">SleeperClass Fare</label>
+                                    <label className="form-label">Sleeper Class Fare :</label>
 
                                     <input
                                         type="text"
@@ -210,7 +210,7 @@ const AddTrain = () => {
 
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">SecondClass Fare</label>
+                                    <label className="form-label">Second Class Fare :</label>
 
                                     <input
                                         type="text"
@@ -223,7 +223,7 @@ const AddTrain = () => {
 
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">FirstClass Fare</label>
+                                    <label className="form-label">First Class Fare :</label>
 
                                     <input
                                         type="text"
@@ -236,8 +236,7 @@ const AddTrain = () => {
 
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">TrainDate</label>
-
+                                    <label className="form-label">Train Date :</label>
                                     <input
                                         type="text"
                                         placeholder="Enter trainDate"
@@ -246,7 +245,7 @@ const AddTrain = () => {
                                         value={trainDate}
                                         onChange={(e) => settrainDate(e.target.value)}>
                                     </input>
-
+                                    
                                 </div>
                                 <button className="btn btn-success" onClick={(e) => saveOrUpdateTrain(e)} >Submit </button>
                                 <Link to="/login" className="btn btn-danger"> Cancel </Link>

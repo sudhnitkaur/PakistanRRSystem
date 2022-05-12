@@ -1,160 +1,144 @@
-
-import "bootstrap/dist/css/bootstrap.min.css";
-import React, { Component, useContext, useState } from "react";
-import { Formik, Form, Field } from "formik";
-import { useHistory, useLocation } from "react-router-dom";
-import * as Yup from "yup";
-import _get from "lodash.get";
+import axios from 'axios';
+import React, { useState } from 'react'
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-toast.configure()
-
-const LoginSchema = Yup.object().shape({
-  password: Yup.string().required("Password is required!"),
-  username: Yup.string().required("username is required!"),
-});
-
-const Login = () => {
-
-  /* To Show Add Toastify Text */
-
-  const notify = () => {
-    toast.success("Admin LoggedIn Successfully!!!", {
-      position: "top-center",
-      autoClose: 5000,
-    });
-
-  };
+import { BrowserRouter as Router, Switch, 
+  Route, Redirect,} from "react-router-dom";
+import { useHistory } from 'react-router-dom';
+import Error from './Error';
+import TrainList from './TrainList'
+import AdminService from '../Services/AdminService';
 
 
 
-  /**To Show Error Toastify Text */
+function Login() {
+  const[redirect,setRedirect] = useState(false);
+  let history = useHistory();
+  // const [token , setToken] = useState("");
 
-  const error = () => {
- toast.error("Invalid Credentials!!!", {
-      position: "top-center",
-      autoClose: 5000,
+  // const data={
+  //   userName:username,
+  //   passWord:password,
+  //   logIn:login,
+  //   token:token
+  // }
 
-    });
+  const[data,setData]=useState({
+    username:"",
+    password:""
+})
 
-  };
+function handle(e){
+  const newdata={...data}
+  newdata[e.target.id]=e.target.value
+  setData(newdata)
+ 
+}
+  
 
-  const [username, setUsername] = useState("    ");
-  const [password, setPassword] = useState("    ");
-  const history = useHistory();
-  const location = useLocation();
-  const fromUrl = _get(location, "state.from.pathname");
-  const signInSuccess = (userData) => {
-    if (fromUrl) {
-      history.push(fromUrl);
-    } else {
-      history.push("/adminTrainList");
-    }
-  };
+  const signin = (username,password)=>{
+    console.log(username +" and " + password );
+     (axios.post("http://localhost:8081/admin/Access/auth?password="+password+"&username="+username,{username,password}
+    ).then(res=>{
+      console.log(res.data);
+      console.log(res.status.type);
+      console.log(res.data.jwt);
+      // setToken(res.data)
+      localStorage.setItem("token", res.data.jwt);
+      if(res.data !== "wrong username and password" ){
+        toast.success("Logged in successfully" , {position:"top-center"})
+        history.push("/adminTrainList")
+        
+      }else{
+        toast.error("you are not logged in" , {position:"top-center"})
+        history.push("/error")
+        
+      }
+      // setRedirect(true)
+      // <Redirect to="/adminTrainList"></Redirect>
+      
+      
+      
+
+    }).catch(err=>{
+      console.log(err);
+      // return <Redirect to="/"></Redirect>
+    }));
+
+    // if(redirect){
+    //   <Redirect to='/adminTrainList'></Redirect>
+    // }
+   
+
+    // if(token !== "wrong username and password" ||  token !==""){
+    //   console.log("inside token")
+    // }else if(token ==="wrong username and password" ){
+    //   console.log("inside token")
+    // }
+    
 
 
-  const signInFailure = (userData) => {
-    if (fromUrl) {
-      history.push(fromUrl);
-    } else {
-      history.push("/login");
-    }
-  };
+   
+  }
 
 
+  
+//   const logout=()=>{
+//     // localStorage.removeItem("SavedToken");
+//     console.log(token);
+//   }
 
-  const login = (userData) => {
-    fetch("http://localhost:8682/auth", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        username: userData.username,
-        password: userData.password,
-      }),
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.error) {
-          alert("your userId and password is not correct");
-        } else {
-          const userData = {
-            token: response,
-            name: username,
-          };
+//   const getCurrentUser=()=>{
+//     console.log( localStorage.getItem("SavedToken"))
+// }
 
-          if (response.response === ' Invalid Credentials..!') {
+  // if(redirect){
+  //   <Redirect to='/adminTrainList' ></Redirect>
+  // }
 
-            signInFailure(userData);
 
-            error();
-
-          }
-
-          else {
-
-            signInSuccess(userData);
-
-            notify();
-
-          }
-          console.log(response);
-
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
   return (
-    <Formik
-      initialValues={{
-        username: "",
-        password: "",
-      }}
-      validationSchema={LoginSchema}
-      onSubmit={async (values, { resetForm }) => {
-        try {
-          const userData = { ...values };
-          resetForm();
-          login(userData);
-        } catch (err) {
-          console.error(err);
-        }
-      }}
-    >
-      {() => (
-         <section className='showcase login'>
-        <Form> <div className="container" >
+    // <div>
+    // <br></br>
+    // <br></br>
+    // <input type="text" placeholder='username' value={data.username} id='username' onChange={handle} />
+    // <br></br>
+    // <br></br>
+    // <input type="text" placeholder='password' value={data.password} id='password' onChange={handle} />
+    // <br></br>
+    // <br></br>
+    // <button onClick={()=>{signin(data.username,data.password)}}>Login</button>
+
+
+    // </div>
+    <section className='showcase login'>
+         <div className="container" >
           <div className='showcase-overlay'>
             <h1 className="booking">ADMIN LOGIN</h1>
             <hr></hr>
             <div className="inner">
               <label><b>User Name</b></label>
               <br></br>
-              <Field name="username" type="text" placeholder="Enter username" autoComplete="off"/>
+              <input type="text" placeholder='username' value={data.username} id='username' onChange={handle} />
               <br></br><br></br>
               <label><b>Password</b></label>
               <br></br>
-              <Field name="password" type="password" placeholder="Password" />
+              <input type="text" placeholder='password' value={data.password} id='password' onChange={handle} />
               <br></br><br></br>
               <button
                 className="btn btn-success"
                 type="submit"
-                onClick={(e) => signInSuccess (e)}
+                onClick={() => { signin(data.username,data.password)}}
               >
-                Sign In
+          LogIn
               </button>
             </div>
           </div></div>
-        </Form>
+        
         </section>
       )}
-    </Formik>
-  );
-};
-export default Login;
+  
+
+  
+
+export default Login

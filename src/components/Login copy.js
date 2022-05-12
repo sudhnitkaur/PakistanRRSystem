@@ -7,7 +7,7 @@ import * as Yup from "yup";
 import _get from "lodash.get";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { Link } from 'react-router-dom'
 toast.configure()
 
 const LoginSchema = Yup.object().shape({
@@ -27,7 +27,7 @@ const UserLogin = () => {
 
   };
 
-
+  
 
   /**To Show Error Toastify Text */
 
@@ -149,6 +149,9 @@ const UserLogin = () => {
               >
                 Sign In
               </button>
+
+              <Link to="/register" className="btn btn-success"> Register </Link>
+              
             </div>
           </div></div>
         </Form>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import AdminService from '../Services/AdminService'
 
 
-const TrainList = () => {
+const ListTrain = () => {
     const [Trains, setTrains] = useState([])
     
     useEffect(() => {
@@ -29,28 +29,26 @@ const TrainList = () => {
     }
 
     return (
-        <div className="container" style={{
-            backgroundColor: 'AntiqueWhite'}}  >
+        <div style={{
+            backgroundColor: 'beige'}}>
+        <div className="container"  >
             <br></br><br></br>
             <h2 className="text-center">List Of Trains</h2>
-            <Link to="/addTrain" className="btn btn-success" >Add Train</Link>
-            <Link to="/paymentHistory" className="btn btn-success" >Payment History</Link>
-            <Link to="/UserHistory" className="btn btn-success" >User Details</Link>
             <br></br><br></br>
             <table className="table table-bordered table-striped" style={{
-        backgroundColor: 'LightCyan'}}> 
+        backgroundColor: 'LightCyan'}}>
                 <thead>
-                    <th>Train No </th>
-                    <th>StartPoint </th>
-                    <th>EndPoint </th>
+                    <th>Train No. </th>
+                    <th>Origin </th>
+                    <th>Destination </th>
                     <th>DeptTime </th>
                     <th>Duration </th>
-                    <th>NoOfSeats </th>
-                    <th>SleeperClass </th>
-                    <th>SecondSleeper </th>
-                    <th>FirstClass </th>
-                    <th>TrainDate </th>
-                    <th>Actions</th>
+                    <th>No. of Seats </th>
+                    <th>Sleeper Class </th>
+                    <th>Second Class </th>
+                    <th>First Class </th>
+                    <th>Train Date </th>
+                   
                 </thead>
                 <tbody>
                     {
@@ -64,13 +62,10 @@ const TrainList = () => {
                                     <td>{TrainDetails.duration}</td>
                                     <td>{TrainDetails.noOfSeats}</td>
                                     <td>{TrainDetails.sleeperClass}</td>
-                                    <td>{TrainDetails.SecondClass}</td>
+                                    <td>{TrainDetails.secondClass}</td>
                                     <td>{TrainDetails.firstClass}</td>
                                     <td>{TrainDetails.trainDate}</td>
-                                    <td> <Link className="btn btn-info" to={`/edit-train/${TrainDetails.trainNo}`}> Update </Link>
-                                        <button className="btn btn-danger" onClick={() => deleteTrain(TrainDetails.trainNo)}
-                                            style={{ marginLeft: "10px" }} >Delete </button></td>
-
+                                    
 
                                 </tr>
                         )
@@ -79,8 +74,8 @@ const TrainList = () => {
 
             </table>
 
-        </div>
+        </div></div>
     )
 }
 
-export default TrainList
+export default ListTrain

@@ -2,7 +2,7 @@ import React from 'react'
 import image1 from '../assets/image1.jpeg'
 import image2 from '../assets/image2.gif'
 import image3 from '../assets/image3.gif'
-
+import './services.scss'
 const Services = () => {
   return (
     <section className='services'>
@@ -13,10 +13,10 @@ const Services = () => {
      
       
       <div className='grid'>
-        <div>
+        <div className='box'>
           <img src={image1} alt='service-1' />
           <h3>
-          <a href="https://www.trivago.in" >Hotels</a>
+          <a className='linking' href="https://www.trivago.in" >Hotels</a>
           </h3>
           <p>
                Tell us your plans and we’ll find the best room for you:
@@ -25,7 +25,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div>
+        <div className='box'>
           <img src={image2} alt='service-2' />
           <h3>
           <a href="https://www.makemytrip.com">Holiday Packages</a>
@@ -37,7 +37,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div>
+        <div className='box'>
           <img src={image3} alt='service-3' />
           <h3>
             
